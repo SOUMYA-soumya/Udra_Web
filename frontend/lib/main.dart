@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'dashboard.dart'; // Added the dashboard import
 
 void main() {
   runApp(const UdraChallanApp());
@@ -64,7 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
             backgroundColor: Colors.green,
           ),
         );
-        // TODO: Navigator.pushReplacement to the Dashboard Screen
+        
+        // Replaced the TODO with the actual Dashboard routing
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DashboardScreen(userData: responseData['user']),
+          ),
+        );
+        
       } else {
         // Failure: Show the specific error (e.g., "Account is Inactive")
         ScaffoldMessenger.of(context).showSnackBar(

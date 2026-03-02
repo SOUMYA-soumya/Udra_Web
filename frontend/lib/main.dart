@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     // Development endpoint matching your local Flask setup
-    final url = Uri.parse('http://127.0.0.1:5000/api/login');
+    final url = Uri.parse('https://udra-web-api.onrender.com/api/login');
     
     try {
       final response = await http.post(
